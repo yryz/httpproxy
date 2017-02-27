@@ -1,0 +1,8 @@
+language: go
+
+go:
+  - 1.8.x
+
+install:
+  - go get github.com/shadowsocks/shadowsocks-go/shadowsocks
+  - go get github.com/sirupsen/logrus
