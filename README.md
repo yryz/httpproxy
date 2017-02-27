@@ -1,4 +1,9 @@
+[![Build Status](https://travis-ci.org/yryz/httpproxy.svg?branch=master)](https://travis-ci.org/yryz/httpproxy)
+
 使用Golang实现的HTTP代理转shadowsocks，主要为命令行下`go get`、`docker pull`、`npm install`、`pip install`、`gem install`、`curl`等程序提供HTTP代理服务，解决安装总是失败的问题。这些服务不支持shadowsocks，但对http代理都有支持。
+
+##原理
+应用 <-------HTTP/1.1-------> httpproxy <-------加密-------> 你的shadowsocks服务器
 
 ##使用
 **安装**
@@ -32,4 +37,8 @@ https_proxy=http://127.0.0.1:6666
 
 * 支持与shadowsocks服务桥接
 * 支持CONNECT，支持HTTPS、HTTP2代理
+
+##TODO
+* 支持代理开关，不用每次手动设置代理地址
+* 支持自定义白名单
 
