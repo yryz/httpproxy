@@ -10,6 +10,10 @@
 
 `go get github.com/yryz/httpproxy`
 
+或者
+
+`curl -L https://github.com/yryz/httpproxy/releases/download/v1.0/httpproxy-linux64.tar.gz | tar -xz -C /usr/local/bin`
+
 配置文件 ~/.httpproxy/config.json
 
 ```
@@ -31,7 +35,7 @@ http_proxy=http://127.0.0.1:6666
 https_proxy=http://127.0.0.1:6666
 ```
 
-如果只是想临时使用，可以手动设置http_proxy环境变量或者 使用`httpproxy set` 快速设置（推荐！）。
+如果只是想临时使用，可以手动设置http_proxy环境变量或者 使用`httpproxy set` 快速就地设置（不影响全局，推荐！）。
 
 ##特点
 
@@ -41,4 +45,4 @@ https_proxy=http://127.0.0.1:6666
 ##TODO
 * 支持代理开关，不用每次手动设置代理地址
 * 支持自定义白名单
-
+* 增加私有IP、主机的过滤
