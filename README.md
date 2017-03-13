@@ -36,6 +36,7 @@ https_proxy=http://127.0.0.1:6666
 ```
 
 如果只是想临时使用，可以手动设置http_proxy环境变量或者 使用`httpproxy set` 快速就地设置（不影响全局，推荐！）。
+推荐方式二：修改~/.bash_profile设置别名`alias proxy="http_proxy=http://127.0.0.1:6666"`，使用时可以 proxy curl ip.cn 
 
 ##特点
 
@@ -43,6 +44,8 @@ https_proxy=http://127.0.0.1:6666
 * 支持CONNECT，支持HTTPS、HTTP2代理
 
 ##TODO
+* 抓包分析、支持HTTPS
 * 支持代理开关，不用每次手动设置代理地址
 * 支持自定义白名单
 * 增加私有IP、主机的过滤
+* 增加授权机制：用户名验证或IP白名单
