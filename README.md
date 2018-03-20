@@ -12,9 +12,9 @@
 
 或者
 
-`curl -L https://github.com/yryz/httpproxy/releases/download/v1.0/httpproxy-linux64.tar.gz | tar -xz -C /usr/local/bin`
+`curl -L https://github.com/yryz/httpproxy/releases/download/v1.1/httpproxy-linux64.tar.gz | tar -xz -C /usr/local/bin`
 
-配置文件 ~/.httpproxy/config.json
+配置文件 ~/.httpproxy/config.json（这里是默认配置，也可以通过 httpproxy -c config.json 来指定）
 
 ```
 {
