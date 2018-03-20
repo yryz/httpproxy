@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"flag"
 	"io/ioutil"
 	"os/user"
 
@@ -16,6 +17,7 @@ type Config struct {
 }
 
 var Conf = &Config{Listen: "127.0.0.1:6666"}
+var configFile string
 
 func init() {
 	log.SetLevel(log.DebugLevel)
@@ -25,7 +27,10 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	configFile := usr.HomeDir + "/.httpproxy/config.json"
+	configFile = usr.HomeDir + "/.httpproxy/config.json"
+
+	flag.StringVar(&configFile, "c", configFile, "configuration file path")
+	flag.Parse()
 
 	log.Info("load config: ", configFile)
 	buf, err := ioutil.ReadFile(configFile)
