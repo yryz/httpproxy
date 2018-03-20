@@ -70,8 +70,8 @@ func (p *ProxyServer) HandleConnect(w http.ResponseWriter, r *http.Request) {
 
 	conn.Write([]byte("HTTP/1.1 200 Connection Established\r\n\r\n"))
 
-	go ss.PipeThenClose(conn, ssConn)
-	ss.PipeThenClose(ssConn, conn)
+	go ss.PipeThenClose(conn, ssConn, nil)
+	ss.PipeThenClose(ssConn, conn, nil)
 }
 
 // 处理HTTP代理请求
