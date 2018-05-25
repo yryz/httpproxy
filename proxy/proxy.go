@@ -101,6 +101,7 @@ func (p *ProxyServer) HandleHttp(w http.ResponseWriter, r *http.Request) {
 			w.Header().Add(k, v)
 		}
 	}
+	w.WriteHeader(resp.StatusCode)
 
 	// copy body
 	n, err := io.Copy(w, resp.Body)
