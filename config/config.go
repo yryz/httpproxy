@@ -24,10 +24,9 @@ func init() {
 	log.SetFormatter(&log.TextFormatter{FullTimestamp: true})
 
 	usr, err := user.Current()
-	if err != nil {
-		panic(err)
+	if err == nil {
+		configFile = usr.HomeDir + "/.httpproxy/config.json"
 	}
-	configFile = usr.HomeDir + "/.httpproxy/config.json"
 
 	flag.StringVar(&configFile, "c", configFile, "configuration file path")
 	flag.Parse()
